@@ -1,0 +1,7 @@
+{
+  "engine": "ngspice_con.exe (ngspice-46 win64)",
+  "pyspice": true,
+  "string_netlist_max_err_db": 7.105427357601002e-15,
+  "pyspice_netlist_max_err_db": 7.105427357601002e-15,
+  "status": "OK"
+}

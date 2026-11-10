@@ -1,0 +1,74 @@
+{
+  "version": "v1.0.0",
+  "smoke": {
+    "engine": "ngspice_con.exe (ngspice-46 win64)",
+    "pyspice": true,
+    "string_netlist_max_err_db": 7.105427357601002e-15,
+    "pyspice_netlist_max_err_db": 7.105427357601002e-15,
+    "status": "OK"
+  },
+  "rc_lp": {
+    "fc_theory_Hz": 159.15494309189535,
+    "fc_sim_Hz": 158.76794915048347,
+    "fc_err_pct": 0.24315546466465998,
+    "ac_max_err_db": 7.105427357601002e-15,
+    "ac_rms_err_db": 2.2029883445013056e-15,
+    "ac_max_err_deg": 1.4210854715202004e-14,
+    "tran_sine_amp_sim": 0.706918151424542,
+    "tran_sine_amp_th": 0.7071067811865475,
+    "tran_sine_amp_err_pct": 0.026676276769540135,
+    "tran_sine_phase_sim_deg": -43.19999999999808,
+    "tran_sine_phase_th_deg": -45.0,
+    "step_tau_theory_s": 0.001,
+    "step_t63_sim_s": 0.001001013954212716
+  },
+  "sk_lp": {
+    "f0_theory_Hz": 1000.3514623967845,
+    "Q_theory": 0.7071067811865476,
+    "peak_sim": 0.9999989948081687,
+    "peak_theory": 0.9999999950070232,
+    "fc_3dB_sim_Hz": 999.0565236669707,
+    "ac_max_err_db": 1.737175975602412e-05,
+    "ac_rms_err_db": 1.0437809698213704e-05,
+    "ac_max_err_deg": 2.8605593257680084e-05,
+    "tran_amp_sim": 0.7065639172114698,
+    "tran_amp_th": 0.7071067811865475,
+    "tran_amp_err_pct": 0.07677255960785603
+  },
+  "inverting_amp": {
+    "G_ideal": -10.0,
+    "G_finite_A_theory": -9.999890001209987,
+    "G_sim_dc": 9.999890001209987,
+    "G_sim_err_vs_finite_pct": 0.0,
+    "ac_max_err_db_vs_ideal": 9.554426052460485e-05,
+    "ac_max_err_db_vs_finite": 0.0,
+    "ac_max_err_deg_vs_ideal": 0.0,
+    "tran_amp_sim": 9.999503119468038,
+    "tran_amp_err_pct": 0.003868859976486133
+  },
+  "sk_bp": {
+    "f0_theory_Hz": 1591.5494309189535,
+    "Q_theory": 0.3333333333333333,
+    "K": 1.0,
+    "peak_sim": 0.3333320322557083,
+    "peak_theory": 0.3333320322557083,
+    "f_peak_sim_Hz": 1584.893192461106,
+    "f_peak_th_Hz": 1584.893192461106,
+    "ac_max_err_db": 1.4210854715202004e-14,
+    "ac_rms_err_db": 4.092153540853434e-15,
+    "ac_max_err_deg": 2.1316282072803006e-14,
+    "tran_amp_sim": 0.33332791397051614,
+    "tran_amp_th": 0.3333333333333333,
+    "tran_amp_err_pct": 0.0016258088451515107
+  },
+  "monte_carlo": {
+    "tol_pct": 5.0,
+    "n_trials": 400,
+    "rc_yield": 1.0,
+    "rc_fc_mean": 159.5275856625563,
+    "rc_fc_std": 6.317763007257342,
+    "sk_yield": 1.0,
+    "sk_fc_mean": 994.3860887485437,
+    "sk_fc_std": 35.95774756609362
+  }
+}

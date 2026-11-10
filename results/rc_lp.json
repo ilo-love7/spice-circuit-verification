@@ -1,0 +1,15 @@
+{
+  "fc_theory_Hz": 159.15494309189535,
+  "fc_sim_Hz": 158.76794915048347,
+  "fc_err_pct": 0.24315546466465998,
+  "ac_max_err_db": 7.105427357601002e-15,
+  "ac_rms_err_db": 2.2029883445013056e-15,
+  "ac_max_err_deg": 1.4210854715202004e-14,
+  "tran_sine_amp_sim": 0.706918151424542,
+  "tran_sine_amp_th": 0.7071067811865475,
+  "tran_sine_amp_err_pct": 0.026676276769540135,
+  "tran_sine_phase_sim_deg": -43.19999999999808,
+  "tran_sine_phase_th_deg": -45.0,
+  "step_tau_theory_s": 0.001,
+  "step_t63_sim_s": 0.001001013954212716
+}

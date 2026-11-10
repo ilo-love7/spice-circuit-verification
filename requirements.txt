@@ -1,0 +1,8 @@
+numpy>=2.0
+scipy>=1.11
+matplotlib>=3.8
+pytest>=8.0
+PySpice>=1.5
+# ngspice 引擎（非 pip 包）：
+#   D:\项目\02_数据集\ngspice-46-win64\Spice64\bin\ngspice_con.exe
+#   来源: github.com/Schemline-IC/ngspice-builds release v46 (ngspice-46-win64.zip)

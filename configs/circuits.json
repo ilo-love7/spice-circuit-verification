@@ -1,0 +1,39 @@
+{
+  "rc_lowpass": {
+    "R": 1000.0,
+    "C": 1e-6,
+    "fstart": 1.0,
+    "fstop": 100000.0,
+    "f_spec": 159.155
+  },
+  "sk_lowpass": {
+    "R1": 10000.0,
+    "R2": 10000.0,
+    "C1": 2.25e-8,
+    "C2": 1.125e-8,
+    "fstart": 10.0,
+    "fstop": 100000.0,
+    "f0_target": 1000.0
+  },
+  "inverting_amp": {
+    "R1": 1000.0,
+    "Rf": 10000.0,
+    "fstart": 1.0,
+    "fstop": 1000000.0
+  },
+  "sk_bandpass": {
+    "R": 10000.0,
+    "C": 1e-8,
+    "K": 1.0,
+    "fstart": 1.0,
+    "fstop": 100000.0
+  },
+  "monte_carlo": {
+    "tol": 0.05,
+    "n_trials": 400,
+    "seed": 20261110,
+    "dist": "uniform",
+    "fstart": 10.0,
+    "fstop": 100000.0
+  }
+}

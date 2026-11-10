@@ -1,0 +1,11 @@
+{
+  "G_ideal": -10.0,
+  "G_finite_A_theory": -9.999890001209987,
+  "G_sim_dc": 9.999890001209987,
+  "G_sim_err_vs_finite_pct": 0.0,
+  "ac_max_err_db_vs_ideal": 9.554426052460485e-05,
+  "ac_max_err_db_vs_finite": 0.0,
+  "ac_max_err_deg_vs_ideal": 0.0,
+  "tran_amp_sim": 9.999503119468038,
+  "tran_amp_err_pct": 0.003868859976486133
+}
