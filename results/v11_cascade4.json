@@ -1,0 +1,69 @@
+{
+  "design": {
+    "f0_Hz": 1000.0,
+    "Q1": 0.541196100146197,
+    "Q2": 1.3065629648763766,
+    "stageA": {
+      "R": 14703.99944206007,
+      "R2": 14703.99944206007,
+      "C1": 1.17157287525381e-08,
+      "C2": 1e-08
+    },
+    "stageB": {
+      "R": 6090.595990027704,
+      "R2": 6090.595990027704,
+      "C1": 6.828427124746191e-08,
+      "C2": 1e-08
+    }
+  },
+  "buffered_vs_theory": {
+    "max_abs_err_db": 5.211524227322073e-05,
+    "rms_err_db": 2.199538158071448e-05,
+    "max_abs_err_deg": 0.00010916565992147298,
+    "rms_err_deg": 4.357416575946888e-05
+  },
+  "direct_vs_theory": {
+    "max_abs_err_db": 5.211524227499709e-05,
+    "rms_err_db": 2.199538158107626e-05,
+    "max_abs_err_deg": 0.00010916565992147298,
+    "rms_err_deg": 4.3574165760726224e-05
+  },
+  "cascade_vs_scipy_butter": {
+    "max_abs_err_db": 5.684341886080802e-14,
+    "rms_err_db": 6.784298159712419e-15,
+    "max_abs_err_deg": 1.1368683772161603e-13,
+    "rms_err_deg": 4.3705056682625794e-14
+  },
+  "loading_max_abs_dev_db_0to10fc": 7.105427357601002e-15,
+  "loading_note": "SK stages inherently isolated by op-amp output (VCVS); passive RC cascade shows real loading",
+  "rc_passive_loading": {
+    "max_abs_dev_db_0to10fc": 3.5218251811136287,
+    "buffered_vs_theory_max_err_db": 1.4210854715202004e-14,
+    "R": 15915.494309189537,
+    "C": 1e-08
+  },
+  "fc_Hz": {
+    "theory": 999.4065332804037,
+    "buffered": 999.4045297457396,
+    "direct": 999.4045297457396
+  },
+  "group_delay": {
+    "max_err_s_100_to_10k": 1.4102664316287955e-09,
+    "tau_g_f0_theory_s": 0.0005791325215282808,
+    "tau_g_f0_sim_s": 0.0005791311112618492
+  },
+  "step_4th": {
+    "overshoot_pct": 10.830760006551573,
+    "rise_time_s": 0.0003871367663796851,
+    "settling_2pct_s": 0.001573680026933273,
+    "final": 0.9999979955916737,
+    "peak": 1.108305378564534
+  },
+  "step_single_Q0707": {
+    "overshoot_pct": 4.321386436856243,
+    "rise_time_s": 0.000341872578645464,
+    "settling_2pct_s": 0.0009506105647308568,
+    "final": 0.9999990000010074,
+    "peak": 1.043212821155749
+  }
+}

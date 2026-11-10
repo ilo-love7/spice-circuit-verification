@@ -119,3 +119,32 @@ def cutoff_from_response(f, mag, level_db: float = -3.0) -> float:
             t = (target - m1) / (m2 - m1)
             return float(np.exp(np.log(f1) + t * (np.log(f2) - np.log(f1))))
     return float("nan")
+
+
+def cutoff_precise(f_grid, H_vals, level_db: float = -3.0) -> float:
+    """精确求 −level_db 截止频率（log-f 三次样条 + brentq）。
+
+    相比 cutoff_from_response 的分段线性插值，消除网格曲率系统偏差
+    （15 点/decade 时线性插值约有 −0.5% 偏差，见 v1.1 报告）。
+    """
+    from scipy.interpolate import CubicSpline
+    from scipy.optimize import brentq
+
+    f = np.asarray(f_grid, dtype=float)
+    H = np.asarray(H_vals, dtype=complex) if np.iscomplexobj(H_vals) else np.asarray(H_vals, dtype=float)
+    mag = np.abs(H)
+    mag_db_v = 20 * np.log10(np.maximum(mag, 1e-30))
+    peak = np.max(mag_db_v)
+    target = peak + level_db
+    spline = CubicSpline(np.log(f), mag_db_v)
+
+    def g(logf):
+        return float(spline(logf) - target)
+
+    # 找首个下穿区间
+    for i in range(1, len(f)):
+        if mag_db_v[i - 1] >= target > mag_db_v[i]:
+            lo, hi = np.log(f[i - 1]), np.log(f[i])
+            root = brentq(g, lo, hi, xtol=1e-12)
+            return float(np.exp(root))
+    return float("nan")

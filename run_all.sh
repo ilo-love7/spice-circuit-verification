@@ -9,10 +9,12 @@ PY="D:/项目/venvs/flsoh-py312/Scripts/python.exe"
 echo "== [1/3] pytest =="
 "$PY" -m pytest tests/ -q
 
-echo "== [2/3] scripts 00-06 =="
+echo "== [2/3] scripts 00-10 =="
 for s in scripts/00_smoke.py scripts/01_rc_lowpass.py scripts/02_sallen_key_lp.py \
          scripts/03_inverting_amp.py scripts/04_sallen_key_bp.py \
-         scripts/05_monte_carlo.py scripts/06_summary.py; do
+         scripts/05_monte_carlo.py scripts/06_summary.py \
+         scripts/07_nonideal_opamp.py scripts/08_cascade_filter.py \
+         scripts/09_wca_sensitivity.py scripts/10_summary_v11.py; do
   echo "-- $s"
   "$PY" "$s"
 done

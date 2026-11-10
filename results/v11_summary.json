@@ -1,0 +1,37 @@
+{
+  "A_nonideal_opamp": {
+    "GBW_Hz": 10000000.000000002,
+    "A0": 100000.0,
+    "SR_V_per_us": 10.0,
+    "ac_max_err_db": 7.105427357601002e-15,
+    "fc_convention_note": "pole = -3.0103dB half-power; -3.00dB multiplies sqrt(10^0.3-1)=0.99763",
+    "fc_classic_vs_exact_pct": -0.010998790133076586,
+    "slew_err_pct": 0.027731679539844123,
+    "small_signal_ratio_to_SR": 0.03333441742454176
+  },
+  "B_cascade4": {
+    "buffered_vs_theory_db": 5.211524227322073e-05,
+    "cascade_vs_scipy_butter_db": 5.684341886080802e-14,
+    "sk_loading_db": 7.105427357601002e-15,
+    "rc_passive_loading_db": 3.5218251811136287,
+    "group_delay_err_s": 1.4102664316287955e-09,
+    "step_overshoot_pct": 10.830760006551573,
+    "step_single_overshoot_pct": 4.321386436856243
+  },
+  "C_wca_sensitivity": {
+    "wca_worst_dev_pct": 10.803324099723,
+    "mc_worst_sample_dev_pct": 10.281671189306735,
+    "analytic_sigma_pct": 2.886751345948129,
+    "mc_std_pct": 2.8859949015849797,
+    "analytic_over_mc": 1.0002621086969814,
+    "sensitivity_f0": {
+      "R1": -0.49999990533007976,
+      "R2": -0.49999990533007976,
+      "C1": 0.0,
+      "C2": -1.0000005606596811
+    },
+    "yield_full_5pct": 0.97305,
+    "yield_tighten_C2_1pct": 1.0,
+    "yield_tighten_C1_1pct": 0.9751
+  }
+}
