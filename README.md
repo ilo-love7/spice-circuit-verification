@@ -50,5 +50,5 @@ src/mc/tolerance.py       容差蒙特卡洛
 scripts/00–06             生产实验脚本
 tests/                    20 项单测
 reports/                  基准评测报告 + 工作记录
-results/ figures/         结果 JSON 与 10 张图
+results/ figures/         结果 JSON 与 13 张图
 ```
