@@ -1,0 +1,17 @@
+{
+  "E16_max_ac_err_db": 0.001733571995771399,
+  "E16_Q10_Q_from_bw": 9.915722871002245,
+  "E16_gbw_required_ratio_Q10_over_Q1": 9.839770609924877,
+  "E16_heuristic_overestimate_Q10": 10.197190091817202,
+  "E16_mc_over_analytic_Q5": 1.002431860534297,
+  "E17_ktc_max_rel_err_pct": 0.20713151876449176,
+  "E17_enbw_white_max_err_pct": 0.21423904276307582,
+  "E17_noise_Q_power_law": 0.9087992119582509,
+  "E17_en_spread_pct": 4.0685232960413487e-10,
+  "E17_no_interior_optimum": true,
+  "E18_fine_onset_ratio_mean": 1.1738450060748915,
+  "E18_fine_onset_spread_pct": 1.511759877127231,
+  "E18_small_signal_over_fpbw_1V": 5.711986642890532,
+  "E18_step_max_rise_ratio": 3.579479913386609,
+  "E18_max_slope_V_per_us": 10.545634311258722
+}

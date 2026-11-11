@@ -1,0 +1,260 @@
+{
+  "config": {
+    "f0_Hz": 1591.5494309189535,
+    "C_F": 1e-08,
+    "q_list": [
+      1.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "r_list_ohm": [
+      1000.0,
+      10000.0,
+      100000.0
+    ],
+    "rc_C_F": 1e-06,
+    "noise_ppd": 40,
+    "fstart": 0.01,
+    "fstop": 1000000000.0,
+    "fstart_bp": 1.0,
+    "fstop_bp": 1000000.0,
+    "alpha_list": [
+      0.1,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      10.0
+    ],
+    "e_n_V_per_sqrtHz": 1e-08,
+    "i_n_A_per_sqrtHz": 1e-12,
+    "signal_vrms": 1.0,
+    "optimal_alpha_Q": 5.0
+  },
+  "e_n": 1e-08,
+  "i_n": 1e-12,
+  "R_eq_en_ohm": 6032.7923671830085,
+  "ktc": [
+    {
+      "R_ohm": 1000.0,
+      "fc_Hz": 159.15494309189535,
+      "ENBW_Hz": 250.0,
+      "thermal_density_analytic": 4.0713722372192895e-09,
+      "thermal_density_ngspice": 4.071371521450764e-09,
+      "total_kT_over_C_Vrms": 6.437404735994157e-08,
+      "total_ngspice_Vrms": 6.436830189980895e-08,
+      "total_spectral_integral_Vrms": 6.437274505841427e-08,
+      "ngspice_rel_err_pct": -0.008925118690283895,
+      "integral_rel_err_pct": -0.0020230226010498065
+    },
+    {
+      "R_ohm": 10000.0,
+      "fc_Hz": 15.915494309189533,
+      "ENBW_Hz": 25.0,
+      "thermal_density_analytic": 1.2874809471988314e-08,
+      "thermal_density_ngspice": 1.287480469255902e-08,
+      "total_kT_over_C_Vrms": 6.437404735994157e-08,
+      "total_ngspice_Vrms": 6.435671543530078e-08,
+      "total_spectral_integral_Vrms": 6.436115619439427e-08,
+      "ngspice_rel_err_pct": -0.0269237765087027,
+      "integral_rel_err_pct": -0.020025407871615553
+    },
+    {
+      "R_ohm": 100000.0,
+      "fc_Hz": 1.5915494309189537,
+      "ENBW_Hz": 2.5,
+      "thermal_density_analytic": 4.0713722372192895e-08,
+      "thermal_density_ngspice": 4.071291166214051e-08,
+      "total_kT_over_C_Vrms": 6.437404735994157e-08,
+      "total_ngspice_Vrms": 6.424070841795475e-08,
+      "total_spectral_integral_Vrms": 6.42451251383872e-08,
+      "ngspice_rel_err_pct": -0.20713151876449176,
+      "integral_rel_err_pct": -0.20027049228940053
+    }
+  ],
+  "bandpass_enbw": [
+    {
+      "Q": 1.0,
+      "H0": 1.0,
+      "bw3db_Hz": 1591.5494309189535,
+      "ENBW_analytic_Hz": 2500.0,
+      "onoise_peak_V_per_sqrtHz": 3.201945336791014e-08,
+      "onoise_peak_f_Hz": 1412.537544622755,
+      "input_referred_density_at_f0": 3.158091929536163e-08,
+      "ngspice_total_Vrms": 1.575747370893896e-06,
+      "spectral_integral_Vrms": 1.5761942750059054e-06,
+      "white_noise_approx_Vrms": 1.5790459647680813e-06,
+      "ENBW_pi_over_2_BW_ratio": 1.5707963267948966,
+      "white_approx_rel_err_pct": 0.1809224793793307
+    },
+    {
+      "Q": 2.0,
+      "H0": 4.0,
+      "bw3db_Hz": 795.7747154594767,
+      "ENBW_analytic_Hz": 20000.0,
+      "onoise_peak_V_per_sqrtHz": 7.738163332110514e-08,
+      "onoise_peak_f_Hz": 1584.893192461114,
+      "input_referred_density_at_f0": 1.934830059169725e-08,
+      "ngspice_total_Vrms": 2.727565216883291e-06,
+      "spectral_integral_Vrms": 2.730639481771648e-06,
+      "white_noise_approx_Vrms": 2.7362629105649632e-06,
+      "ENBW_pi_over_2_BW_ratio": 1.5707963267948966,
+      "white_approx_rel_err_pct": 0.20593816323444258
+    },
+    {
+      "Q": 5.0,
+      "H0": 24.999999999999993,
+      "bw3db_Hz": 318.30988618379075,
+      "ENBW_analytic_Hz": 312499.9999999999,
+      "onoise_peak_V_per_sqrtHz": 2.910829474524439e-07,
+      "onoise_peak_f_Hz": 1584.893192461114,
+      "input_referred_density_at_f0": 1.165413226132808e-08,
+      "ngspice_total_Vrms": 6.457409087984571e-06,
+      "spectral_integral_Vrms": 6.50093045759269e-06,
+      "white_noise_approx_Vrms": 6.51485798877573e-06,
+      "ENBW_pi_over_2_BW_ratio": 1.5707963267948966,
+      "white_approx_rel_err_pct": 0.21423904276307582
+    },
+    {
+      "Q": 10.0,
+      "H0": 99.99999999999997,
+      "bw3db_Hz": 159.15494309189538,
+      "ENBW_analytic_Hz": 2499999.999999999,
+      "onoise_peak_V_per_sqrtHz": 8.149936346552614e-07,
+      "onoise_peak_f_Hz": 1584.893192461114,
+      "input_referred_density_at_f0": 8.180148862606158e-09,
+      "ngspice_total_Vrms": 1.262576192920486e-05,
+      "spectral_integral_Vrms": 1.2954445235001992e-05,
+      "white_noise_approx_Vrms": 1.2933951002535611e-05,
+      "ENBW_pi_over_2_BW_ratio": 1.5707963267948966,
+      "white_approx_rel_err_pct": -0.15820231661489714
+    }
+  ],
+  "total_noise_vs_Q_power_law": 0.9087992119582509,
+  "impedance_scaling": [
+    {
+      "alpha": 0.1,
+      "R1_ohm": 200.0,
+      "R3_ohm": 9999.999999999998,
+      "passive_Vrms": 2.04201205015019e-06,
+      "with_en_Vrms": 1.524495495547408e-05,
+      "en_component_Vrms": 1.5107575529563805e-05,
+      "in_component_Vrms": 1.5107575529563803e-05,
+      "K_noise_transfer": 1510.7575529563806,
+      "total_Vrms": 2.1462699969386627e-05,
+      "snr_db": 93.36631290923874
+    },
+    {
+      "alpha": 0.25,
+      "R1_ohm": 500.0,
+      "R3_ohm": 24999.999999999993,
+      "passive_Vrms": 3.228704543992293e-06,
+      "with_en_Vrms": 1.54487336507613e-05,
+      "en_component_Vrms": 1.5107575529507308e-05,
+      "in_component_Vrms": 3.776893882376826e-05,
+      "K_noise_transfer": 1510.7575529507308,
+      "total_Vrms": 4.0806324403034805e-05,
+      "snr_db": 87.7854504438484
+    },
+    {
+      "alpha": 0.5,
+      "R1_ohm": 1000.0,
+      "R3_ohm": 49999.999999999985,
+      "passive_Vrms": 4.566077755009545e-06,
+      "with_en_Vrms": 1.578251895118651e-05,
+      "en_component_Vrms": 1.5107575529507318e-05,
+      "in_component_Vrms": 7.553787764753656e-05,
+      "K_noise_transfer": 1510.7575529507317,
+      "total_Vrms": 7.716902787996467e-05,
+      "snr_db": 82.25113941291625
+    },
+    {
+      "alpha": 1.0,
+      "R1_ohm": 2000.0,
+      "R3_ohm": 99999.99999999997,
+      "passive_Vrms": 6.457409087984571e-06,
+      "with_en_Vrms": 1.642975868688506e-05,
+      "en_component_Vrms": 1.5107575529504704e-05,
+      "in_component_Vrms": 0.000151075755295047,
+      "K_noise_transfer": 1510.7575529504704,
+      "total_Vrms": 0.0001519665121284232,
+      "snr_db": 76.36504208323058
+    },
+    {
+      "alpha": 2.0,
+      "R1_ohm": 4000.0,
+      "R3_ohm": 199999.99999999994,
+      "passive_Vrms": 9.132155510019077e-06,
+      "with_en_Vrms": 1.765318958825259e-05,
+      "en_component_Vrms": 1.510757552950234e-05,
+      "in_component_Vrms": 0.0003021515105900467,
+      "K_noise_transfer": 1510.757552950234,
+      "total_Vrms": 0.00030266676470086024,
+      "snr_db": 70.38070531059914
+    },
+    {
+      "alpha": 4.0,
+      "R1_ohm": 8000.0,
+      "R3_ohm": 399999.9999999999,
+      "passive_Vrms": 1.291481817596917e-05,
+      "with_en_Vrms": 1.987539601864858e-05,
+      "en_component_Vrms": 1.5107575529507315e-05,
+      "in_component_Vrms": 0.0006043030211802924,
+      "K_noise_transfer": 1510.7575529507315,
+      "total_Vrms": 0.0006046297815808671,
+      "snr_db": 64.37020930136151
+    },
+    {
+      "alpha": 10.0,
+      "R1_ohm": 20000.0,
+      "R3_ohm": 999999.9999999998,
+      "passive_Vrms": 2.042012050150193e-05,
+      "with_en_Vrms": 2.540118421800149e-05,
+      "en_component_Vrms": 1.5107575529547701e-05,
+      "in_component_Vrms": 0.0015107575529547696,
+      "K_noise_transfer": 1510.75755295477,
+      "total_Vrms": 0.0015109710797925817,
+      "snr_db": 56.41487696082631
+    }
+  ],
+  "impedance_monotonicity": {
+    "total_monotonic_increasing": true,
+    "interior_optimum_exists": false,
+    "minimum_at_alpha": 0.1,
+    "passive_power_law": 0.49999999999999956,
+    "in_power_law": 0.9999999999998244,
+    "en_component_spread_pct": 4.0685232960413487e-10,
+    "noise_floor_Vrms": 1.510757552952007e-05,
+    "alpha_where_passive_equals_en": 5.473598617611319,
+    "alpha_where_in_equals_en": 0.10000000000000003,
+    "verdict": "no interior optimum; noise floor set by op-amp e_n"
+  },
+  "i_n_sensitivity": [
+    {
+      "i_n_multiplier": 0.01,
+      "total_monotonic": true,
+      "total_at_min_alpha_Vrms": 1.5245703508801153e-05,
+      "total_at_max_alpha_Vrms": 2.9554339749989954e-05
+    },
+    {
+      "i_n_multiplier": 0.1,
+      "total_monotonic": true,
+      "total_at_min_alpha_Vrms": 1.531962923762349e-05,
+      "total_at_max_alpha_Vrms": 0.00015319629237607444
+    },
+    {
+      "i_n_multiplier": 1.0,
+      "total_monotonic": true,
+      "total_at_min_alpha_Vrms": 2.1462699969386627e-05,
+      "total_at_max_alpha_Vrms": 0.0015109710797925817
+    },
+    {
+      "i_n_multiplier": 10.0,
+      "total_monotonic": true,
+      "total_at_min_alpha_Vrms": 0.00015184298630408302,
+      "total_at_max_alpha_Vrms": 0.015107596883725354
+    }
+  ]
+}

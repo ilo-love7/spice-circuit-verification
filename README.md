@@ -5,6 +5,8 @@
 Python 脚本化 EDA 验证流水线：**PySpice 建网表 → ngspice 仿真 → scipy 理论对比 → 容差蒙特卡洛**。
 RC / Sallen-Key 低通·带通 / 反相放大器四类电路，AC + 瞬态全自动验证，±5% 元件容差良率曲线。
 
+**当前版本 v1.2.0 / 2026-11-11**（v1.0 流水线 → v1.1 非理想运放·高阶滤波·容差方法学 → v1.2 MFB 带通·噪声·压摆瞬态）。
+
 ## 流水线
 
 ```
@@ -36,6 +38,17 @@ PySpice Circuit API ──┐
 
 36 项单测全绿（v1.0 20 + v1.1 16）；`run_all.sh` 覆盖 scripts/00–10。
 
+## 核心结果（v1.2.0 深化）
+
+| 深化组 | 关键结果 |
+|---|---|
+| E16 MFB 带通对比 | 多路反馈拓扑把带通 Q 从 SK 的**结构约束 1/3** 解放到 0.333–10；Q=10 时 AC vs 手推解析式 1.73e-3 dB、Q(3dB)=9.916；`H0 = 2Q²/(1+ρ)` 用 ρ 解耦增益（10→40，误差 0.0055%）。**高 Q 不免费**：f0 误差 <1% 所需 GBW 从 Q=1 的 0.159 MHz 升到 Q=10 的 1.561 MHz（9.84×），经典 `100·f0·Q²` 经验式在高 Q 下高估 10.2×；±5% 容差 MC / 解析误差传播 = 1.0024，Q 对 C1/C2 灵敏度精确为 0 |
+| E17 噪声分析（`.noise`） | 补上报告 §6 遗留项：RC 的 √(4kTR) 与 √(kT/C) 被 ngspice 复现到 0.009–0.207%；二阶带通 ENBW = H0²·πf0/(2Q)，白噪声近似误差 ≤0.22%；输出总噪声 ~ Q^0.909（理论 Q¹）。运放 e_n 用同相输入串联等效电阻严格建模（AC 不变），阻抗标度下 e_n 项离散度 0.000%。**负结果**：无源 ∝ α^0.5、i_n ∝ α¹、e_n 恒定 ⇒ 总噪声在 α 上单调递增，**不存在内点最优**，噪声地板由 e_n 决定 |
+| E18 压摆瞬态 / FPBW | 小信号带宽 GBW/NG = 909 kHz 与幅度无关，FPBW = SR/(2πVp) 跨幅度变化 100×；1 V 输入时前者是后者的 5.71×。THD 在统一 slew_ratio 轴上 collapse：THD@FPBW 仍仅 0.001%，1% 失真起始于 **1.183× / 1.165× FPBW**（离散度 1.51%）⇒ FPBW 是保守下界。低 SR 阶跃使 10–90% 上升时间从 341.75 µs 拉长到 1223.30 µs（3.58×） |
+
+90 项单测全绿（v1.0 20 + v1.1 16 + v1.2 54）；`run_all.sh` 覆盖 scripts/00–14。
+汇总表见 `results/v12_summary_tables.md`，9 张新图见 `figures/v12_*.png`。
+
 ## 环境（如实标注）
 
 - **PySpice 1.5** 作网表前端；**ngspice-46 win64**（`ngspice_con.exe` 批处理）作引擎；自研 ASCII raw 解析。
@@ -45,10 +58,16 @@ PySpice Circuit API ──┐
 ## 一键复现
 
 ```bash
-bash run_all.sh   # pytest（36 项）+ scripts/00–10
+bash run_all.sh                        # pytest（90 项）+ scripts/00–14 全流程
+python -m pytest tests/ -q             # 90 项
+python scripts/11_mfb_bandpass.py      # E16 MFB 带通 / GBW 退化 / 容差
+python scripts/12_noise_analysis.py    # E17 .noise / kT/C / ENBW / 阻抗标度
+python scripts/13_slew_distortion.py   # E18 THD / FPBW / 低 SR 阶跃
+python scripts/14_summary_v12.py       # 由三个 JSON 重算汇总表
 ```
 
 依赖见 `requirements.txt`（numpy / scipy / matplotlib / pytest / PySpice）。
+`.noise` 输出为 ngspice 特有 raw 段（`Noise Spectral Density Curves` + `Integrated Noise`），解析见 `src/theory/noise.py`。
 
 ## 目录
 
@@ -59,11 +78,15 @@ src/circuits/             网表构建（字符串 + PySpice 双轨）
 src/theory/transfer.py    解析传递函数与误差指标（+ cutoff_precise）
 src/theory/nonideal.py    有限 GBW/压摆率运放理论（v1.1）
 src/theory/cascade.py     4 阶级联与阶跃指标（v1.1）
+src/theory/mfb.py         MFB 带通解析设计 / 灵敏度 / 向量化参数（v1.2）
+src/theory/noise.py       4kTR / kT/C / ENBW / 噪声积分 / SNR（v1.2）
+src/theory/distortion.py  FPBW / slew_ratio / THD / 波形指标（v1.2）
 src/mc/tolerance.py       容差蒙特卡洛
 src/mc/wca.py             WCA/解析传播/灵敏度/良率优化（v1.1）
 src/circuits/nonideal_builders.py  非理想宏模型与级联网表（v1.1）
-scripts/00–10             生产实验脚本（v1.0 00–06 + v1.1 07–10）
-tests/                    36 项单测
+src/circuits/v12_builders.py       MFB / .noise / e_n 等效电阻 / 大信号网表（v1.2）
+scripts/00–14             生产实验脚本（v1.0 00–06 + v1.1 07–10 + v1.2 11–14）
+tests/                    90 项单测
 reports/                  基准评测报告 + 工作记录
-results/ figures/         结果 JSON 与 21 张图（v1.0 13 + v1.1 8）
+results/ figures/         结果 JSON 与 30 张图（v1.0 13 + v1.1 8 + v1.2 9）
 ```
