@@ -1,0 +1,139 @@
+{
+  "config": {
+    "R0": 10000.0,
+    "C0": 1e-08,
+    "tc_r_ppm": 2000.0,
+    "tc_c_ppm_same": 2000.0,
+    "tc_c_ppm_opp": -2000.0,
+    "temp_list_C": [
+      25.0,
+      50.0,
+      85.0,
+      125.0
+    ],
+    "fstart": 10.0,
+    "fstop": 100000.0,
+    "ac_ppd": 60,
+    "gain_R1": 1000.0,
+    "gain_Rf": 10000.0,
+    "vos0": 0.001,
+    "tc_vos_ppm_per_c": 2.0,
+    "ng_vos": 11.0
+  },
+  "tc_R": 0.002,
+  "tc_C_same": 0.002,
+  "tc_C_opp": -0.002,
+  "T0_C": 25.0,
+  "rc_cutoff_drift": [
+    {
+      "temp_C": 25.0,
+      "dT": 0.0,
+      "fc_same_sim": 1603.8138148696548,
+      "drift_same_sim": 0.0,
+      "drift_same_analytic": 0.0,
+      "fc_opp_sim": 1590.9908917293221,
+      "drift_opp_sim": 0.0,
+      "drift_opp_analytic": 0.0
+    },
+    {
+      "temp_C": 50.0,
+      "dT": 25.0,
+      "fc_same_sim": 1454.14806918867,
+      "drift_same_sim": -0.0933186535078877,
+      "drift_same_analytic": -0.09297052154195029,
+      "fc_opp_sim": 1594.345339668554,
+      "drift_opp_sim": 0.0021084017241517206,
+      "drift_opp_analytic": 0.0025062656641605674
+    },
+    {
+      "temp_C": 85.0,
+      "dT": 60.0,
+      "fc_same_sim": 1277.472968959289,
+      "drift_same_sim": -0.20347801152772105,
+      "drift_same_analytic": -0.20280612244897978,
+      "fc_opp_sim": 1612.7724827228483,
+      "drift_opp_sim": 0.013690581829699067,
+      "drift_opp_analytic": 0.014610389610389296
+    },
+    {
+      "temp_C": 125.0,
+      "dT": 100.0,
+      "fc_same_sim": 1112.2650676511366,
+      "drift_same_sim": -0.3064874131031645,
+      "drift_same_analytic": -0.30555555555555547,
+      "fc_opp_sim": 1654.5276761412943,
+      "drift_opp_sim": 0.039935353962278874,
+      "drift_opp_analytic": 0.04166666666666652
+    }
+  ],
+  "gain_drift": [
+    {
+      "temp_C": 25.0,
+      "dT": 0.0,
+      "gain_match_sim": 9.999890001209986,
+      "gain_match_drift": 0.0,
+      "gain_match_analytic": 0.0,
+      "gain_mismatch_drift": 0.0,
+      "gain_mismatch_analytic": 0.0
+    },
+    {
+      "temp_C": 50.0,
+      "dT": 25.0,
+      "gain_match_sim": 9.999890001209986,
+      "gain_match_drift": 0.0,
+      "gain_match_analytic": 0.0,
+      "gain_mismatch_drift": 0.04818613729862187,
+      "gain_mismatch_analytic": 0.047619047619047616
+    },
+    {
+      "temp_C": 85.0,
+      "dT": 60.0,
+      "gain_match_sim": 9.99989000120999,
+      "gain_match_drift": 4.440892098500626e-16,
+      "gain_match_analytic": 0.0,
+      "gain_mismatch_drift": 0.10839283739880212,
+      "gain_mismatch_analytic": 0.10714285714285712
+    },
+    {
+      "temp_C": 125.0,
+      "dT": 100.0,
+      "gain_match_sim": 9.999890001209986,
+      "gain_match_drift": 0.0,
+      "gain_match_analytic": 0.0,
+      "gain_mismatch_drift": 0.16857069960201843,
+      "gain_mismatch_analytic": 0.16666666666666669
+    }
+  ],
+  "offset_drift": [
+    {
+      "temp_C": 25.0,
+      "Vos_V": 0.001,
+      "Vout_offset_V": 0.011,
+      "NG": 11.0
+    },
+    {
+      "temp_C": 50.0,
+      "Vos_V": 0.00105,
+      "Vout_offset_V": 0.01155,
+      "NG": 11.0
+    },
+    {
+      "temp_C": 85.0,
+      "Vos_V": 0.00112,
+      "Vout_offset_V": 0.01232,
+      "NG": 11.0
+    },
+    {
+      "temp_C": 125.0,
+      "Vos_V": 0.0012000000000000001,
+      "Vout_offset_V": 0.013200000000000002,
+      "NG": 11.0
+    }
+  ],
+  "conclusions": {
+    "same_tc_rc_drift_adds": true,
+    "opposite_tc_cancels_first_order": false,
+    "matched_resistors_zero_gain_drift": true,
+    "offset_drift_not_canceled_by_matching": true
+  }
+}
